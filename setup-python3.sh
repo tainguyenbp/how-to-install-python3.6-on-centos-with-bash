@@ -3,7 +3,7 @@
 DIR_SOURCE=/usr/src
 VERSION=3.6.6
 URL_DOWNLOAD_FILE="https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz"
-TARBALL="$DIR_SOURCE"/Python-${VERSION}.tgz
+TAR_EXTRACT="$DIR_SOURCE"/Python-${VERSION}.tgz
 
 cd $DIR_SOURCE
 
@@ -13,11 +13,11 @@ function _setup_system_packages() {
 }
 
 function _download_python3_source() {
-    wget --no-check-certificate "$URL_DOWNLOAD_FILE" -O "$TARBALL"
+    wget --no-check-certificate "$URL_DOWNLOAD_FILE" -O "$TAR_EXTRACT"
 }
 
 function _extract_python3_source() {
-    tar -C "$DIR_SOURCE" -xvf "$TARBALL"
+    tar -C "$DIR_SOURCE" -xvf "$TAR_EXTRACT"
 }
 
 function _compile_python3() {
